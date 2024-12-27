@@ -2,6 +2,8 @@ import { client } from "@/sanity/lib/client";
 import BlogCard from "./Components/BlogCard";
 import { BlogPost } from "./Components/BlogCard";
 
+export const revalidate = 10;
+
 export default async function Home() {
   const query = `*[_type == "blog"] | order(_createdAt asc) {
     title,
@@ -20,7 +22,7 @@ export default async function Home() {
         <p className="text-lg text-gray-600">Explore the latest stories and updates</p>
       </header>
       <section className="grid grid-cols-1 mb-10 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {getData.map(({ post }: { post: BlogPost }) => (
+        {getData.map((post: BlogPost ) => (
           <BlogCard post={post} key={post.slug} />
         ))}
       </section>
