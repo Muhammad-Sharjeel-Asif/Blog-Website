@@ -74,7 +74,7 @@ export default async function BlogDetails({ params: { slug } }: { params: { slug
             width={100}
             height={100}
             className="object-cover h-full w-auto rounded-md "
-            style={{ maxHeight: "100%" }} // Ensure it fits within the parent div height
+            style={{ maxHeight: "100%" }}
           />
         </div>
         <div>

@@ -38,4 +38,3 @@ export default function BlogCard({ post }: { post: BlogPost }) {
     </div>
   );
 }
-// bg-purple-800
