@@ -5,12 +5,13 @@ import { BlogPost } from "./Components/BlogCard";
 export const revalidate = 10;
 
 export default async function Home() {
-  const query = `*[_type == "blog"] | order(_createdAt asc) {
+  const query = `*[_type == "blog" && defined(slug.current)] | order(_createdAt desc) {
     title,
     image,
     "summary": pt::text(summary),
     "slug": slug.current
   }`;
+
 
   const getData = await client.fetch(query);
   // console.log(getData)
@@ -22,7 +23,7 @@ export default async function Home() {
         <p className="text-lg text-gray-600">Explore the latest stories and updates</p>
       </header>
       <section className="grid grid-cols-1 mb-10 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {getData.map((post: BlogPost ) => (
+        {getData.map((post: BlogPost) => (
           <BlogCard post={post} key={post.slug} />
         ))}
       </section>
