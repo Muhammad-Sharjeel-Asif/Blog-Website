@@ -79,12 +79,6 @@ const Navbar = () => {
                             placeholder="Search..."
                             className="w-full px-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
                         />
-                        <Link href="/login" className="text-gray-700 hover:text-orange-500 font-medium">
-                            Login
-                        </Link>
-                        <Link href="/signup" className="bg-orange-500 text-white px-5 py-2 rounded-full font-medium hover:bg-orange-600">
-                            Sign Up
-                        </Link>
                     </div>
                 </div>
             )}
