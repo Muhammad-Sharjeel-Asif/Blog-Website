@@ -6,7 +6,7 @@ import { PortableText } from "@portabletext/react";
 import CommentSection from "@/app/Components/CommentSection";
 
 export default async function BlogDetails({ params: { slug } }: { params: { slug: string } }) {
-  const query = `*[_type == "blog" && slug.current == $slug][0]{
+  const query = `*[_type == "blog" && slug.current == '${slug}'][0]{
     title,
     image,
     publishedAt,
